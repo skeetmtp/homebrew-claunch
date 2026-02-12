@@ -19,7 +19,7 @@ cask "claunch" do
                    args: ["-R", "#{ENV["HOME"]}/Applications/Claunch.app"]
   end
 
-  uninstall delete: "#{ENV["HOME"]}/Applications/Claunch.app"
+  uninstall trash: "#{ENV["HOME"]}/Applications/Claunch.app"
 
   zap trash: "~/.config/claunch"
 end
