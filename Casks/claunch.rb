@@ -12,6 +12,8 @@ cask "claunch" do
   app "Claunch.app", target: "#{ENV["HOME"]}/Applications/Claunch.app"
 
   postflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-cr", "#{ENV["HOME"]}/Applications/Claunch.app"]
     system_command "/System/Library/Frameworks/CoreServices.framework" \
                    "/Frameworks/LaunchServices.framework/Support/lsregister",
                    args: ["-R", "#{ENV["HOME"]}/Applications/Claunch.app"]
